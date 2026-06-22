@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Noelia Sánchez | Data Scientist Portfolio</title>
+<link rel="stylesheet" href="output.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #100425; /* Brand Dark Navy */
+            color: #dbe4e3;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(16, 4, 37, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .glass-panel:hover {
+            border-color: #00fbfc;
+            box-shadow: 0 0 20px rgba(0, 251, 252, 0.1);
+        }
+
+        .neon-glow-cyan {
+            box-shadow: 0 0 15px #00fbfc;
+        }
+
+        .text-gradient-primary {
+            background: linear-gradient(90deg, #00fbfc 0%, #ffabef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(0, 251, 252, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 251, 252, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- Background Animation Shell -->
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+
+<div class="grid-bg absolute inset-0"></div>
+</div>
+<!-- Navigation -->
+<nav class="sticky top-4 mx-auto rounded-full w-[95%] max-w-container-max z-50 flex justify-between items-center px-gutter py-3 border border-white/20 bg-surface-container-low/60 backdrop-blur-xl shadow-[0_0_20px_rgba(0,251,252,0.15)] transition-all duration-300">
+<div class="font-h3 text-[20px] md:text-h3 font-bold text-primary-fixed tracking-tight">Noelia Sánchez</div>
+<div class="hidden md:flex gap-8 font-body-md text-body-md">
+<a class="text-primary-fixed border-b-2 border-primary-fixed pb-1" href="#home">Home</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#experience">Experience</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#projects">Projects</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#contact">Contact</a>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 rounded-full font-bold flex items-center gap-2 hover:shadow-[0_0_15px_#00fbfc] hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined">download</span>
+            <span class="hidden sm:inline">Download CV</span>
+        </button>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center px-margin-desktop py-stack-xl max-w-container-max mx-auto relative" id="home">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<!-- Left Content -->
+<div class="space-y-stack-md z-10">
+<h1 class="font-hero-display text-[42px] sm:text-[48px] md:text-hero-display text-gradient-primary leading-none">Noelia Sánchez</h1>
+<h2 class="font-h3 text-h3 text-secondary">Data Analyst | Data Scientist</h2>
+<p class="font-body-lg text-body-lg max-w-xl text-on-surface-variant">
+                        Data Analyst passionate about understanding the stories behind the data. Skilled in data analysis, visualization, and machine learning, I use data, technology, and analytical thinking to uncover patterns, solve problems, and turn information into meaningful action.
+
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-full font-bold hover:shadow-[0_0_20px_#00fbfc] transition-all">View Projects</button>
+<button class="border border-secondary text-secondary px-8 py-4 rounded-full font-bold hover:bg-secondary/10 transition-all">Contact Me</button>
+</div>
+</div>
+<!-- Right Portrait Visual -->
+<div class="relative flex justify-center items-center">
+<div class="relative w-64 h-64 md:w-[450px] md:h-[450px]">
+<!-- Glow Circles -->
+<div class="absolute inset-0 rounded-full border-2 border-primary-fixed/30 animate-[pulse_4s_infinite]"></div>
+<div class="absolute inset-[-20px] rounded-full border border-secondary/20 animate-[pulse_6s_infinite]"></div>
+<!-- Main Image -->
+<div class="absolute inset-4 rounded-full overflow-hidden border-4 border-primary-fixed/20 shadow-[0_0_50px_rgba(0,251,252,0.3)] float-animation">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHyjq0arP6AIBUitV3E3Yl9_ccmfaLXTWTbKTc9WLk46YX_GI00qvQDMlVSV3KbLAXF9d69oAEcX_qTTfrOT83RyC2tvLs0F6zmjSmNyo675wEPHdZQAxqJFzr09nTtvUBPmU364Qb3tkM9n75GXCpsxnRpTEwf4uXGfd2D7Iwi65Ua9c0rMqW_2DT6w89d2E5bJQ2bn5n1Yj0vziy0bYwYqbPLeLQFLy9CNCoVVYQGYQu-AT6CAJ8dHwgcegNIogjzLohMrNwlbT3"/>
+</div>
+<!-- Data Points/Widgets (Floating) -->
+</div>
+<div class="hidden md:block glass-panel absolute bottom-10 -left-16 p-4 scale-75 border-secondary/40">
+<span class="material-symbols-outlined text-secondary text-4xl">trending_up</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tech Stack Chips -->
+<div class="pt-12">
+<p class="text-label-caps text-xs mb-6 text-on-surface-variant/60 uppercase tracking-[0.3em]" data-lang-key="hero_stack_title">Core Technical Stack</p>
+<div class="flex flex-wrap gap-3">
+<div class="glass-panel px-4 py-2 flex items-center gap-2 border-white/5 hover:border-primary-fixed/50 group">
+<i class="devicon-python-plain text-xl text-primary-fixed"></i>
+<span class="text-xs font-code opacity-80 group-hover:opacity-100 transition-opacity">Python</span>
+</div>
+<div class="glass-panel px-4 py-2 flex items-center gap-2 border-white/5 hover:border-primary-fixed/50 group">
+<i class="devicon-pandas-plain text-xl text-primary-fixed"></i>
+<span class="text-xs font-code opacity-80 group-hover:opacity-100 transition-opacity">Pandas</span>
+</div>
+<div class="glass-panel px-4 py-2 flex items-center gap-2 border-white/5 hover:border-primary-fixed/50 group">
+<i class="devicon-numpy-plain text-xl text-primary-fixed"></i>
+<span class="text-xs font-code opacity-80 group-hover:opacity-100 transition-opacity">NumPy</span>
+</div>
+<div class="glass-panel px-4 py-2 flex items-center gap-2 border-white/5 hover:border-primary-fixed/50 group">
+    <i class="devicon-scikitlearn-plain text-xl text-primary-fixed"></i>
+    <span class="text-xs font-code opacity-80 group-hover:opacity-100 transition-opacity">Scikit-Learn</span>
+</div>
+<div class="glass-panel px-4 py-2 flex items-center gap-2 border-white/5 hover:border-primary-fixed/50 group">
+<i class="devicon-postgresql-plain text-xl text-primary-fixed"></i>
+<span class="text-xs font-code opacity-80 group-hover:opacity-100 transition-opacity">SQL</span>
+</div>
+<div class="glass-panel px-4 py-2 flex items-center gap-2 border-white/5 hover:border-secondary/50 group">
+    <span class="material-symbols-outlined text-xl text-secondary">
+        analytics
+    </span>
+    <span class="text-xs font-code opacity-80 group-hover:opacity-100 transition-opacity">Power BI</span>
+</div>
+<div class="glass-panel px-4 py-2 flex items-center gap-2 border-white/5 hover:border-secondary/50 group">
+<i class="devicon-github-original text-xl text-secondary"></i>
+<span class="text-xs font-code opacity-80 group-hover:opacity-100 transition-opacity">GitHub</span>
+</div>
+<div class="glass-panel px-4 py-2 flex items-center gap-2 border-white/5 hover:border-secondary/50 group">
+<i class="devicon-linux-plain text-xl text-secondary"></i>
+<span class="text-xs font-code opacity-80 group-hover:opacity-100 transition-opacity">Linux</span>
+</div>
+</div>
+</div>
+</div>
+<!-- About Section -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto" id="about">
+<div class="flex flex-col md:flex-row gap-stack-lg">
+<div class="flex-1">
+<span class="text-label-caps text-secondary uppercase tracking-widest block mb-4">The Journey</span>
+<h2 class="font-section-title text-section-title mb-8">About Me</h2>
+<div class="space-y-6 font-body-lg text-on-surface-variant">
+<p>My journey combines human behavioral insight with analytical thinking.</p>
+<p>Transitioning from social education to high-performance data science, I leverage a unique background to interpret not just what the data says, but why it matters for human systems.</p>
+<p>What excites me most about data is not the technology itself, but the stories, behaviours, and opportunities hidden behind the numbers.</p>
+</div>
+</div>
+<div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="glass-panel p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-6">analytics</span>
+<div>
+<h4 class="font-h3 text-xl mb-2">Data Analytics</h4>
+<p class="text-on-surface-variant text-sm">Exploratory analysis, statistical inference, and deep data cleaning.</p>
+</div>
+</div>
+<div class="glass-panel p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">legend_toggle</span>
+<div>
+<h4 class="font-h3 text-xl mb-2">Data visualization</h4>
+<p class="text-on-surface-variant text-sm">Translating complex datasets into intuitive storytelling dashboards.</p>
+</div>
+</div>
+<div class="glass-panel p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl mb-6">smart_toy</span>
+<div>
+<h4 class="font-h3 text-xl mb-2">Machine Learning</h4>
+<p class="text-on-surface-variant text-sm">Developing predictive models with Scikit-Learn and PyTorch.</p>
+</div>
+</div>
+<div class="glass-panel p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">cloud_sync</span>
+<div>
+<h4 class="font-h3 text-xl mb-2">Big Data</h4>
+<p class="text-on-surface-variant text-sm">Managing large-scale data flows and cloud integration.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience & Education -->
+<section class="py-stack-xl bg-surface-container-low/30 relative" id="experience">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<!-- Experience -->
+<div>
+<h2 class="font-section-title text-section-title mb-12">Professional Evolution</h2>
+<div class="space-y-8 relative">
+<!-- Timeline Line -->
+<div class="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary-fixed to-transparent opacity-20"></div>
+<!-- Item 1 -->
+<div class="relative pl-16 group">
+<div class="absolute left-4 top-1 w-4 h-4 rounded-full bg-primary-fixed shadow-[0_0_10px_#00fbfc]"></div>
+<div class="glass-panel p-6 group-hover:bg-surface-container/50">
+<span class="text-primary-fixed font-code text-sm">Current</span>
+<h3 class="font-h3 text-xl mt-1">Technical Training Specialist</h3>
+<p class="text-secondary-fixed-dim font-medium mb-4">Mainjobs</p>
+<p class="text-on-surface-variant text-sm">Orchestrating technical education programs and leveraging data to optimize learning outcomes across diverse corporate environments.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative pl-16 group">
+<div class="absolute left-5 top-2 w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="glass-panel p-6 group-hover:bg-surface-container/50">
+<span class="text-on-surface-variant font-code text-sm">2021 - 2023</span>
+<h3 class="font-h3 text-xl mt-1">Training Specialist</h3>
+<p class="text-secondary-fixed-dim font-medium mb-4">Webhelp</p>
+<p class="text-on-surface-variant text-sm">Facilitated complex training modules and analyzed performance metrics to enhance operational efficiency.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Education -->
+<div>
+<h2 class="font-section-title text-section-title mb-12">Knowledge Base</h2>
+<div class="grid grid-cols-1 gap-6">
+<div class="glass-panel p-6 border-l-4 border-primary-fixed">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-fixed">school</span>
+<span class="text-xs bg-primary-fixed/10 text-primary-fixed px-3 py-1 rounded-full uppercase font-bold tracking-widest">Master's</span>
+</div>
+<h4 class="font-h3 text-lg">Master's in Big Data &amp; Business Analytics</h4>
+<p class="text-on-surface-variant text-sm mt-2">Focused on data engineering, deep learning, and enterprise data strategy.</p>
+</div>
+<div class="glass-panel p-6 border-l-4 border-secondary">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary">terminal</span>
+<span class="text-xs bg-secondary/10 text-secondary px-3 py-1 rounded-full uppercase font-bold tracking-widest">42 Málaga</span>
+</div>
+<h4 class="font-h3 text-lg">42 Málaga (Telefónica)</h4>
+<p class="text-on-surface-variant text-sm mt-2">Rigorous peer-to-peer coding program specializing in C, algorithm design, and system architecture.</p>
+</div>
+<div class="glass-panel p-6 border-l-4 border-tertiary-fixed-dim">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">data_exploration</span>
+<span class="text-xs bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim px-3 py-1 rounded-full uppercase font-bold tracking-widest">Bootcamp</span>
+</div>
+<h4 class="font-h3 text-lg">Data Analytics Professional Bootcamp</h4>
+<p class="text-on-surface-variant text-sm mt-2">Intensive training in full-stack data analysis from ingestion to visualization.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto" id="projects">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-md gap-gutter">
+<div>
+<span class="text-label-caps text-primary-fixed uppercase tracking-widest block mb-4">Portfolio Showcase</span>
+<h2 class="font-section-title text-section-title">Selected Projects</h2>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-4 font-body-md text-sm">
+<button class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-bold">All</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all">Analysis</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all">Power BI</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all">ML</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="glass-panel group overflow-hidden">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A sophisticated data visualization dashboard showing interactive charts, line graphs, and colorful heatmaps on a dark glass interface. The lighting is dominated by glowing cyan and magenta accents, representing high-tech financial analysis and real-time sales metrics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD6Fjp4RPat7YgEFKP9wIkBAlQTbHH1zUf3cfgCxZ1XV5VkmHE01yPXdEXmMeH7-S58oQTlo1nVnvjMV3QT8suAgVvgAP3FWMoyJwkLXYdVNp0JfSSkY3iu1dgz1W9bExk7ks873jZ6IWevrxfkBkatNKuKeYcCsjdm12yu5ZPBSRMCdYmK3oOGaxDgKaszkY8r3HRK5GcVOdOVRtcB5Sgd5uHPqgKo8Q-7f1lpz1UYFKeYIjrqyAYviUSAxoFXDpf0G56typgHQoq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-primary-fixed">Power BI</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">SQL</span>
+</div>
+<h4 class="font-h3 text-xl mb-3">Sales Analytics Ecosystem</h4>
+<p class="text-on-surface-variant text-sm mb-6">Comprehensive sales analytics dashboard providing real-time visibility into revenue trends and product performance across multiple regions.</p>
+<a class="flex items-center gap-2 text-primary-fixed font-bold text-sm hover:translate-x-2 transition-transform" href="#">
+                            Explore Case Study
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="glass-panel group overflow-hidden">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Conceptual 3D representation of an artificial intelligence network with nodes and connecting neural pathways glowing in deep magenta. The style is futuristic and analytical, set against a dark navy digital void, illustrating the complexity of machine learning prediction models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt9AsRVR-bU6fjZUwEINWl9Vtydwwv8pYcs7uoKbJ9QKntyDBXz_nnYy_UK-HpDVJ3-aEAu_iCWoovNNbzyLETvJuDZZNXyjmERDsxz8svl-hFi-Ata7-QjfR99n69lVIpYokT0LwJKCTCi1lp5CtJw0pnC1V7NMUMK7c3PCy9VCS8029ItT5QGzxOh5RDUj02wJmrEomeg5EiIl3V3MnnWy7lPH9Zvm8MGsfGrCCReazX6M31B67QPxyMCIJ9uLenVJhkEFU1w-gD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-secondary">Python</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">ML</span>
+</div>
+<h4 class="font-h3 text-xl mb-3">Customer Churn Prediction</h4>
+<p class="text-on-surface-variant text-sm mb-6">End-to-end ML model utilizing Scikit-Learn to identify high-risk customers, resulting in a 15% improvement in retention strategies.</p>
+<a class="flex items-center gap-2 text-secondary font-bold text-sm hover:translate-x-2 transition-transform" href="#">
+                            Explore Case Study
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="glass-panel group overflow-hidden">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A stylized digital map visualization showing mountain terrain with elevation heatmaps and trekking routes highlighted in glowing cyan lines. The aesthetic is inspired by topographic GIS software, using a dark mode interface with neon blue highlights and sleek data overlays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-jvibN1BgtED0RA2KIVMV4rKAZDTe9XxZeFGZYJ1XCzqvS-mjsB3RLN_44h6-pJpkcm8LevZDQr6Vd4oOVaBrnZu7zvr4ujYA6mYe5a5CzaelOEz9-womsUv0dx3hSzJWfwC6eUWGf1aDV5OJm_OXsS55drhcO2gMrhHgYVdcgfhSBsGe_ZqxxiMsGM7Sg8VSMUXXe-RqqPdj0hvYcXRWsLiVo2hSxtA4GucVUVRZMARDDTkFaGte9d8MlaHN51ggISPwIsDC0CMC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-primary-fixed">Geospatial</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">API</span>
+</div>
+<h4 class="font-h3 text-xl mb-3">Mountain Routes Analysis</h4>
+<p class="text-on-surface-variant text-sm mb-6">Advanced geospatial analysis using Wikiloc data and OpenElevation API to visualize difficult terrain and optimize route difficulty scaling.</p>
+<a class="flex items-center gap-2 text-primary-fixed font-bold text-sm hover:translate-x-2 transition-transform" href="#">
+                            Explore Case Study
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Additional Project Cards... -->
+</div>
+</section>
+<!-- Let's Connect -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto text-center" id="contact">
+<h2 class="font-section-title text-section-title mb-stack-md">Ready to Deploy Intelligence?</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<a class="glass-panel p-8 group hover:scale-105" href="#">
+<div class="w-12 h-12 rounded-full bg-primary-fixed/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-fixed/20">
+<span class="material-symbols-outlined text-primary-fixed">alternate_email</span>
+</div>
+<h5 class="font-bold">Email</h5>
+<p class="text-xs text-on-surface-variant mt-1">Direct Communication</p>
+</a>
+<a class="glass-panel p-8 group hover:scale-105" href="#">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary/20">
+<span class="material-symbols-outlined text-secondary">link</span>
+</div>
+<h5 class="font-bold">LinkedIn</h5>
+<p class="text-xs text-on-surface-variant mt-1">Professional Network</p>
+</a>
+<a class="glass-panel p-8 group hover:scale-105" href="#">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-fixed-dim/20">
+<span class="material-symbols-outlined text-primary-fixed-dim">hub</span>
+</div>
+<h5 class="font-bold">GitHub</h5>
+<p class="text-xs text-on-surface-variant mt-1">Code Repository</p>
+</a>
+<div class="glass-panel p-8 group hover:scale-105 cursor-pointer border-primary-fixed/30 neon-glow-cyan bg-primary-fixed/5">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-on-primary-fixed">download</span>
+</div>
+<h5 class="font-bold">Download CV</h5>
+<p class="text-xs text-on-surface-variant mt-1">Complete Dossier</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[24px] bg-surface-container-lowest border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center px-margin-desktop py-stack-md gap-gutter w-full">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-section-title-mobile text-section-title-mobile text-primary-fixed">Noelia Sánchez</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-center md:text-left opacity-70">© 2024 Noelia Sánchez.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8 font-body-md text-body-md text-on-surface-variant">
+<a class="hover:text-secondary transition-colors" href="#">Contact</a>
+<a class="hover:text-secondary transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-secondary transition-colors" href="#">GitHub</a>
+<a class="text-primary-fixed hover:text-secondary transition-colors flex items-center gap-1" href="#home">
+                Back to Top
+                <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</a>
+</div>
+</footer>
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
