@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="output.css">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet"/>
 <style>
         body {
@@ -35,6 +34,7 @@
 
         .text-gradient-primary {
             background: linear-gradient(90deg, #00fbfc 0%, #ffabef 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -54,6 +54,70 @@
                 linear-gradient(90deg, rgba(0, 251, 252, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
+        .lang-switch-link {
+            opacity: 0.7;
+        }
+
+        .lang-switch-link.active {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(0, 251, 252, 0.35);
+        }
+
+        .featured-project-shell {
+            margin-bottom: 2.5rem;
+        }
+
+        .featured-project-image {
+            height: 15rem;
+        }
+
+        @media (min-width: 1024px) {
+            .featured-project-layout {
+                display: grid;
+                grid-template-columns: 2fr 3fr;
+            }
+
+            .featured-project-image {
+                height: 100%;
+            }
+        }
+
+        .featured-kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
+        .featured-kpi-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 0.75rem;
+            background: rgba(16, 4, 37, 0.4);
+        }
+
+        .featured-kpi-value {
+            display: block;
+            color: #00fbfc;
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .featured-kpi-label {
+            display: block;
+            margin-top: 0.1rem;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(219, 228, 227, 0.8);
+        }
+
+        @media (min-width: 768px) {
+            #project-filters {
+                flex-wrap: nowrap;
+            }
+        }
     </style>
 </head>
 <body class="font-body-md">
@@ -71,6 +135,16 @@
 <a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#experience">Experience</a>
 <a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#projects">Projects</a>
 <a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#contact">Contact</a>
+</div>
+<div class="flex sm:hidden items-center gap-2 text-xs font-bold uppercase tracking-widest">
+    <a class="lang-switch-link text-primary-fixed" data-lang-link="en" href="?lang=en">EN</a>
+    <span class="text-on-surface-variant/60">|</span>
+    <a class="lang-switch-link text-primary-fixed" data-lang-link="es" href="?lang=es">ES</a>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+    <a class="lang-switch-link text-primary-fixed" data-lang-link="en" href="?lang=en">EN</a>
+    <span class="text-on-surface-variant/60">|</span>
+    <a class="lang-switch-link text-primary-fixed" data-lang-link="es" href="?lang=es">ES</a>
 </div>
 <a
     href="./assets/CV_Noelia_Sanchez.pdf"
@@ -93,6 +167,16 @@
                         Data Analyst passionate about understanding the stories behind the data. Skilled in data analysis, visualization, and machine learning, I use data, technology, and analytical thinking to uncover patterns, solve problems, and turn information into meaningful action.
 
                     </p>
+<div class="glass-panel p-4 sm:p-5 max-w-none md:max-w-xl border-primary-fixed/20" id="hero-featured-snippet">
+<p class="text-label-caps text-[10px] text-on-surface-variant/70 uppercase tracking-[0.24em]" id="hero-featured-label">Latest Project</p>
+<p class="font-h3 text-lg text-primary-fixed mt-2" id="hero-featured-title">OncoLens</p>
+<p class="text-sm text-secondary mt-1" id="hero-featured-subtitle">Clinical Decision Support System</p>
+<p class="text-xs sm:text-sm text-on-surface-variant/85 mt-2" id="hero-featured-kpis">20,531 Genes • 1,680 RNA-Seq Samples • 5 Cancer Types</p>
+<a class="inline-flex items-center gap-2 text-primary-fixed font-bold text-sm mt-3 hover:translate-x-2 transition-transform" href="#projects" id="hero-featured-link">
+    <span id="hero-featured-link-text">View Project</span>
+    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
 <div class="flex flex-col sm:flex-row gap-4 pt-4">
 <a
     href="#projects"
@@ -274,87 +358,25 @@
 </section>
 <!-- Projects Section -->
 <section class="py-24 md:py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="projects">
+<div class="featured-project-shell">
+<span class="text-label-caps text-secondary uppercase tracking-widest block mb-4" id="featured-project-label">Featured Project</span>
+<div id="featured-project-container"></div>
+</div>
 <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-stack-md gap-gutter">
 <div>
 <span class="text-label-caps text-primary-fixed uppercase tracking-widest block mb-4">Portfolio Showcase</span>
 <h2 class="font-section-title text-section-title">Selected Projects</h2>
 </div>
 <!-- Filters -->
-<div class="flex flex-wrap gap-3 sm:gap-4 font-body-md text-sm">
-<button class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-bold">All</button>
-<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all">Analysis</button>
-<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all">Power BI</button>
-<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all">ML</button>
+<div class="flex flex-wrap gap-3 sm:gap-4 font-body-md text-sm" id="project-filters">
+<button class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-bold" data-filter="All" type="button">All</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all" data-filter="Analysis" type="button">Analysis</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all" data-filter="Power BI" type="button">Power BI</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all" data-filter="Machine Learning" type="button">Machine Learning</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant hover:border-primary-fixed transition-all" data-filter="Programming" type="button">Programming</button>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-<!-- Project 1 -->
-<div class="glass-panel group overflow-hidden">
-<div class="h-48 overflow-hidden relative">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A sophisticated data visualization dashboard showing interactive charts, line graphs, and colorful heatmaps on a dark glass interface. The lighting is dominated by glowing cyan and magenta accents, representing high-tech financial analysis and real-time sales metrics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD6Fjp4RPat7YgEFKP9wIkBAlQTbHH1zUf3cfgCxZ1XV5VkmHE01yPXdEXmMeH7-S58oQTlo1nVnvjMV3QT8suAgVvgAP3FWMoyJwkLXYdVNp0JfSSkY3iu1dgz1W9bExk7ks873jZ6IWevrxfkBkatNKuKeYcCsjdm12yu5ZPBSRMCdYmK3oOGaxDgKaszkY8r3HRK5GcVOdOVRtcB5Sgd5uHPqgKo8Q-7f1lpz1UYFKeYIjrqyAYviUSAxoFXDpf0G56typgHQoq"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-</div>
-<div class="p-6">
-<div class="flex gap-2 mb-4">
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-primary-fixed">Python</span>
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">SkLearn</span>
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">Streamlit</span>
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">Docker</span>
-<div class="flex gap-2 mb-4 flex-wrap">
-</div>
-</div>
-<h4 class="font-h3 text-xl mb-3">Loan Risk Prediction Platform</h4>
-<p class="text-on-surface-variant text-sm mb-6">Production-ready machine learning platform for credit risk assessment, featuring automated model deployment, interactive analytics, Docker containerization, and CI/CD automation using GitHub Actions.</p>
-<a class="flex items-center gap-2 text-primary-fixed font-bold text-sm hover:translate-x-2 transition-transform" href="https://github.com/nsfacila/Loan_risk_prediction_ML">
-                            Explore Case Study
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Project 2 -->
-<div class="glass-panel group overflow-hidden">
-<div class="h-48 overflow-hidden relative">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A stylized digital map visualization showing mountain terrain with elevation heatmaps and trekking routes highlighted in glowing cyan lines. The aesthetic is inspired by topographic GIS software, using a dark mode interface with neon blue highlights and sleek data overlays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-jvibN1BgtED0RA2KIVMV4rKAZDTe9XxZeFGZYJ1XCzqvS-mjsB3RLN_44h6-pJpkcm8LevZDQr6Vd4oOVaBrnZu7zvr4ujYA6mYe5a5CzaelOEz9-womsUv0dx3hSzJWfwC6eUWGf1aDV5OJm_OXsS55drhcO2gMrhHgYVdcgfhSBsGe_ZqxxiMsGM7Sg8VSMUXXe-RqqPdj0hvYcXRWsLiVo2hSxtA4GucVUVRZMARDDTkFaGte9d8MlaHN51ggISPwIsDC0CMC"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-</div>
-<div class="p-6">
-<div class="flex gap-2 mb-4">
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-secondary">Power BI</span>
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">DAX</span>
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">ETL</span>
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">Power Query</span>
-</div>
-<h4 class="font-h3 text-xl mb-3">Airbnb Global Markets Analytics</h4>
-<p class="text-on-surface-variant text-sm mb-6">Business Intelligence project developed in Power BI to analyse Airbnb markets across six international cities. Includes ETL processes, data modelling, KPI development, and interactive dashboards to identify pricing trends, host behaviour, and market opportunities.</p>
-<a class="flex items-center gap-2 text-primary-fixed font-bold text-sm hover:translate-x-2 transition-transform" href="https://github.com/nsfacila/airbnb-global-markets-powerbi">
-                            Explore Case Study
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Project 3 -->
-<div class="glass-panel group overflow-hidden">
-<div class="h-48 overflow-hidden relative">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Conceptual 3D representation of an artificial intelligence network with nodes and connecting neural pathways glowing in deep magenta. The style is futuristic and analytical, set against a dark navy digital void, illustrating the complexity of machine learning prediction models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt9AsRVR-bU6fjZUwEINWl9Vtydwwv8pYcs7uoKbJ9QKntyDBXz_nnYy_UK-HpDVJ3-aEAu_iCWoovNNbzyLETvJuDZZNXyjmERDsxz8svl-hFi-Ata7-QjfR99n69lVIpYokT0LwJKCTCi1lp5CtJw0pnC1V7NMUMK7c3PCy9VCS8029ItT5QGzxOh5RDUj02wJmrEomeg5EiIl3V3MnnWy7lPH9Zvm8MGsfGrCCReazX6M31B67QPxyMCIJ9uLenVJhkEFU1w-gD"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-</div>
-<div class="p-6">
-<div class="flex gap-2 mb-4">
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-primary-fixed">Python</span>
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">Pandas</span>
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">Sklearn</span>
-<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold text-on-surface-variant">Streamlit</span>
-</div>
-<h4 class="font-h3 text-xl mb-3">Tourism Spending Forecasting</h4>
-<p class="text-on-surface-variant text-sm mb-6">End-to-end ML model utilizing Scikit-Learn and interactive Streamlit deployment to forecast international tourism expenditure from over 10,000 trip records, providing key business insights.</p>
-<a class="flex items-center gap-2 text-secondary font-bold text-sm hover:translate-x-2 transition-transform" href="https://github.com/nsfacila/Tourism_spending_forecasting">
-                            Explore Case Study
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Additional Project Cards... -->
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="projects-grid"></div>
 </section>
 <!-- Let's Connect -->
 <section class="py-24 md:py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center" id="contact">
@@ -380,9 +402,10 @@
 </div>
 <h5 class="font-bold">GitHub</h5>
 <p class="text-xs text-on-surface-variant mt-1">Code Repository</p>
+</a>
 <a
     href="./assets/CV_Noelia_Sanchez.pdf"
-    download
+    target="_blank"
     class="glass-panel p-8 group hover:scale-105 cursor-pointer border-primary-fixed/30 neon-glow-cyan bg-primary-fixed/5"
 >
     <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mx-auto mb-4">
@@ -439,7 +462,7 @@
 
         <a
             href="./assets/CV_Noelia_Sanchez.pdf"
-            download
+            target="_blank"
             class="hover:text-secondary transition-colors">
             Download CV
         </a>
@@ -457,13 +480,390 @@
 
 </footer>
 <script>
+        const PROJECTS = [
+            {
+                title: 'Loan Risk Prediction Platform',
+                titleEs: 'Plataforma de Prediccion de Riesgo de Prestamos',
+                description: 'Production-ready machine learning platform for credit risk assessment, featuring automated model deployment, interactive analytics, Docker containerization, and CI/CD automation using GitHub Actions.',
+                descriptionEs: 'Plataforma de machine learning lista para produccion para evaluar riesgo crediticio, con despliegue automatizado, analitica interactiva, dockerizacion y automatizacion CI/CD con GitHub Actions.',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAD6Fjp4RPat7YgEFKP9wIkBAlQTbHH1zUf3cfgCxZ1XV5VkmHE01yPXdEXmMeH7-S58oQTlo1nVnvjMV3QT8suAgVvgAP3FWMoyJwkLXYdVNp0JfSSkY3iu1dgz1W9bExk7ks873jZ6IWevrxfkBkatNKuKeYcCsjdm12yu5ZPBSRMCdYmK3oOGaxDgKaszkY8r3HRK5GcVOdOVRtcB5Sgd5uHPqgKo8Q-7f1lpz1UYFKeYIjrqyAYviUSAxoFXDpf0G56typgHQoq',
+                technologies: ['Python', 'SkLearn', 'Streamlit', 'Docker'],
+                categories: ['Analysis', 'Machine Learning', 'Programming'],
+                links: {
+                    github: 'https://github.com/nsfacila/Loan_risk_prediction_ML',
+                    caseStudy: 'https://github.com/nsfacila/Loan_risk_prediction_ML'
+                },
+                accent: 'primary'
+            },
+            {
+                title: 'Airbnb Global Markets Analytics',
+                titleEs: 'Analitica de Mercados Globales de Airbnb',
+                description: 'Business Intelligence project developed in Power BI to analyse Airbnb markets across six international cities. Includes ETL processes, data modelling, KPI development, and interactive dashboards to identify pricing trends, host behaviour, and market opportunities.',
+                descriptionEs: 'Proyecto de Business Intelligence en Power BI para analizar mercados de Airbnb en seis ciudades internacionales. Incluye ETL, modelado de datos, desarrollo de KPIs y dashboards interactivos para detectar tendencias de precio y oportunidades de mercado.',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB-jvibN1BgtED0RA2KIVMV4rKAZDTe9XxZeFGZYJ1XCzqvS-mjsB3RLN_44h6-pJpkcm8LevZDQr6Vd4oOVaBrnZu7zvr4ujYA6mYe5a5CzaelOEz9-womsUv0dx3hSzJWfwC6eUWGf1aDV5OJm_OXsS55drhcO2gMrhHgYVdcgfhSBsGe_ZqxxiMsGM7Sg8VSMUXXe-RqqPdj0hvYcXRWsLiVo2hSxtA4GucVUVRZMARDDTkFaGte9d8MlaHN51ggISPwIsDC0CMC',
+                technologies: ['Power BI', 'DAX', 'ETL', 'Power Query'],
+                categories: ['Analysis', 'Power BI'],
+                links: {
+                    github: 'https://github.com/nsfacila/airbnb-global-markets-powerbi',
+                    caseStudy: 'https://github.com/nsfacila/airbnb-global-markets-powerbi'
+                },
+                accent: 'primary'
+            },
+            {
+                title: 'Tourism Spending Forecasting',
+                titleEs: 'Prediccion de Gasto Turistico',
+                description: 'End-to-end ML model utilizing Scikit-Learn and interactive Streamlit deployment to forecast international tourism expenditure from over 10,000 trip records, providing key business insights.',
+                descriptionEs: 'Modelo end-to-end de ML con Scikit-Learn y despliegue interactivo en Streamlit para predecir gasto turistico internacional a partir de mas de 10.000 registros de viaje.',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBt9AsRVR-bU6fjZUwEINWl9Vtydwwv8pYcs7uoKbJ9QKntyDBXz_nnYy_UK-HpDVJ3-aEAu_iCWoovNNbzyLETvJuDZZNXyjmERDsxz8svl-hFi-Ata7-QjfR99n69lVIpYokT0LwJKCTCi1lp5CtJw0pnC1V7NMUMK7c3PCy9VCS8029ItT5QGzxOh5RDUj02wJmrEomeg5EiIl3V3MnnWy7lPH9Zvm8MGsfGrCCReazX6M31B67QPxyMCIJ9uLenVJhkEFU1w-gD',
+                technologies: ['Python', 'Pandas', 'Sklearn', 'Streamlit'],
+                categories: ['Analysis', 'Machine Learning', 'Programming'],
+                links: {
+                    github: 'https://github.com/nsfacila/Tourism_spending_forecasting',
+                    caseStudy: 'https://github.com/nsfacila/Tourism_spending_forecasting'
+                },
+                accent: 'secondary'
+            }
+        ];
+
+        const FEATURED_PROJECT = {
+            title: 'OncoLens',
+            subtitle: 'Clinical Decision Support System',
+            subtitleEs: 'Sistema de Apoyo a la Decision Clinica',
+            description: 'OncoLens is an end-to-end Machine Learning platform for transcriptomic cancer classification using RNA-Seq data. It delivers a hierarchical workflow for Tumor vs Normal and cancer subtype prediction, integrated with Streamlit dashboards, Supabase, and production deployment via Docker, GitHub Actions, Docker Hub, and Render.',
+            descriptionEs: 'OncoLens es una plataforma end-to-end de Machine Learning para clasificacion transcriptomica de cancer con datos RNA-Seq. Incluye un flujo jerarquico para Tumor vs Normal y prediccion de subtipos, integrado con dashboards en Streamlit, Supabase y despliegue productivo con Docker, GitHub Actions, Docker Hub y Render.',
+            image: './assets/oncolens.png',
+            technologies: ['Python', 'Scikit-Learn', 'SQL', 'Streamlit', 'Supabase', 'Docker', 'GitHub Actions', 'Docker Hub', 'Render'],
+            kpis: [
+                { value: '20,531', label: 'Genes', labelEs: 'Genes' },
+                { value: '1,680', label: 'RNA-Seq Samples', labelEs: 'Muestras RNA-Seq' },
+                { value: '5', label: 'Cancer Types', labelEs: 'Tipos de Cancer' },
+                { value: '2', label: 'Machine Learning Models', labelEs: 'Modelos de Machine Learning' }
+            ],
+            links: {
+                liveDemo: 'https://oncolens-amc5.onrender.com/',
+                website: 'https://bootcamp-da-p2.github.io/OncoLens/',
+                github: 'https://github.com/nsfacila/Oncolens_ML'
+            }
+        };
+
+        const FILTER_ORDER = ['All', 'Analysis', 'Power BI', 'Machine Learning', 'Programming'];
+        let activeCategory = 'All';
+        const pageLanguage = new URLSearchParams(window.location.search).get('lang') === 'es' ? 'es' : 'en';
+
+        const UI_TRANSLATIONS = {
+            en: {
+                title: 'Noelia Sanchez | Data Scientist Portfolio',
+                nav: ['Home', 'About', 'Experience', 'Projects', 'Contact'],
+                cvButton: 'Download CV',
+                heroRole: 'Data Analyst | Data Scientist',
+                heroIntro: 'Data Analyst passionate about understanding the stories behind the data. Skilled in data analysis, visualization, and machine learning, I use data, technology, and analytical thinking to uncover patterns, solve problems, and turn information into meaningful action.',
+                heroFeaturedLabel: 'Latest Project',
+                heroFeaturedCta: 'View Project',
+                heroButtons: ['View Projects', 'Contact Me'],
+                stackTitle: 'Core Technical Stack',
+                aboutLabel: 'The Journey',
+                aboutTitle: 'About Me',
+                aboutParagraphs: [
+                    'My journey combines human behavioral insight with analytical thinking.',
+                    'Transitioning from social education to high-performance data science, I leverage a unique background to interpret not just what the data says, but why it matters for human systems.',
+                    'What excites me most about data is not the technology itself, but the stories, behaviours, and opportunities hidden behind the numbers.'
+                ],
+                experienceTitle: 'Professional Evolution',
+                experience: ['Current', 'Technical Training Specialist', 'Orchestrating technical education programs and leveraging data to optimize learning outcomes across diverse corporate environments.', 'Training Specialist', 'Facilitated complex training modules and analyzed performance metrics to enhance operational efficiency.'],
+                educationTitle: 'Knowledge Base',
+                education: [
+                    "Master's", "Master's in Big Data & Business Analytics", 'Focused on data engineering, deep learning, and enterprise data strategy.',
+                    'Bootcamp', 'Data Analytics Professional Bootcamp', 'Intensive training in full-stack data analysis from ingestion to visualization.'
+                ],
+                featuredLabel: 'Featured Project',
+                projectsLabel: 'Portfolio Showcase',
+                projectsTitle: 'Selected Projects',
+                filters: { 'All': 'All', 'Analysis': 'Analysis', 'Power BI': 'Power BI', 'Machine Learning': 'Machine Learning', 'Programming': 'Programming' },
+                actions: { github: 'GitHub', caseStudy: 'Case Study', liveDemo: 'Live Demo', website: 'Project Website', repo: 'GitHub Repository' },
+                contactTitle: 'Ready to Deploy Intelligence?',
+                contactCards: ['Email', 'Direct Communication', 'LinkedIn', 'Professional Network', 'GitHub', 'Code Repository', 'Download CV', 'Complete Dossier'],
+                footer: ['Email', 'LinkedIn', 'GitHub', 'Download CV', 'Back to Top']
+            },
+            es: {
+                title: 'Noelia Sanchez | Portfolio de Ciencia de Datos',
+                nav: ['Inicio', 'Sobre mi', 'Experiencia', 'Proyectos', 'Contacto'],
+                cvButton: 'Descargar CV',
+                heroRole: 'Analista de Datos | Data Scientist',
+                heroIntro: 'Analista de Datos apasionada por entender las historias detras de los datos. Especializada en analisis, visualizacion y machine learning, combino tecnologia y pensamiento analitico para descubrir patrones, resolver problemas y convertir informacion en accion.',
+                heroFeaturedLabel: 'Proyecto Reciente',
+                heroFeaturedCta: 'Ver Proyecto',
+                heroButtons: ['Ver Proyectos', 'Contactar'],
+                stackTitle: 'Stack Tecnologico Principal',
+                aboutLabel: 'Trayectoria',
+                aboutTitle: 'Sobre Mi',
+                aboutParagraphs: [
+                    'Mi trayectoria combina perspectiva humana y pensamiento analitico.',
+                    'Al pasar de la educacion social a la ciencia de datos de alto rendimiento, aporto un enfoque unico para interpretar no solo que dicen los datos, sino por que importan en sistemas humanos.',
+                    'Lo que mas me entusiasma de los datos no es solo la tecnologia, sino las historias, comportamientos y oportunidades ocultas tras los numeros.'
+                ],
+                experienceTitle: 'Evolucion Profesional',
+                experience: ['Actualidad', 'Especialista en Formacion Tecnica', 'Coordino programas de formacion tecnica y utilizo datos para optimizar resultados de aprendizaje en entornos corporativos diversos.', 'Especialista en Formacion', 'Imparti formaciones complejas y analice metricas de rendimiento para mejorar la eficiencia operativa.'],
+                educationTitle: 'Base de Conocimiento',
+                education: [
+                    'Master', 'Master en Big Data y Business Analytics', 'Enfoque en ingenieria de datos, deep learning y estrategia de datos empresarial.',
+                    'Bootcamp', 'Bootcamp Profesional de Data Analytics', 'Formacion intensiva en analisis de datos end-to-end: ingesta, modelado y visualizacion.'
+                ],
+                featuredLabel: 'Proyecto Destacado',
+                projectsLabel: 'Portfolio',
+                projectsTitle: 'Proyectos Seleccionados',
+                filters: { 'All': 'Todos', 'Analysis': 'Analisis', 'Power BI': 'Power BI', 'Machine Learning': 'Machine Learning', 'Programming': 'Programacion' },
+                actions: { github: 'GitHub', caseStudy: 'Caso de Estudio', liveDemo: 'Demo en Vivo', website: 'Web del Proyecto', repo: 'Repositorio GitHub' },
+                contactTitle: 'Lista para Desplegar Inteligencia?',
+                contactCards: ['Correo', 'Comunicacion Directa', 'LinkedIn', 'Red Profesional', 'GitHub', 'Repositorio de Codigo', 'Descargar CV', 'Dossier Completo'],
+                footer: ['Correo', 'LinkedIn', 'GitHub', 'Descargar CV', 'Volver Arriba']
+            }
+        };
+
+        function getTechnologyColorClass(tech) {
+            const key = tech.toLowerCase();
+            if (key.includes('power bi') || key.includes('dax') || key.includes('power query')) {
+                return 'text-secondary';
+            }
+            return 'text-primary-fixed';
+        }
+
+        function renderTechnologyPills(technologies, mode = 'default', accent = 'primary') {
+            if (mode === 'project-card') {
+                return technologies.map((tech, index) => {
+                    const accentClass = accent === 'secondary' ? 'text-secondary' : 'text-primary-fixed';
+                    const colorClass = index === 0 ? accentClass : 'text-on-surface-variant';
+                    return `<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold ${colorClass}">${tech}</span>`;
+                }).join('');
+            }
+
+            return technologies.map(tech => `<span class="px-2 py-1 rounded bg-surface-container-high text-[10px] uppercase font-bold ${getTechnologyColorClass(tech)}">${tech}</span>`).join('');
+        }
+
+        function createCardButton(label, href, colorClass) {
+            return `<a class="flex items-center gap-2 ${colorClass} font-bold text-sm hover:translate-x-2 transition-transform" href="${href}" target="_blank" rel="noopener noreferrer">${label}<span class="material-symbols-outlined text-sm">arrow_forward</span></a>`;
+        }
+
+        function renderFeaturedProject() {
+            const copy = UI_TRANSLATIONS[pageLanguage];
+            const container = document.getElementById('featured-project-container');
+            if (!container) return;
+
+            const description = pageLanguage === 'es' ? FEATURED_PROJECT.descriptionEs : FEATURED_PROJECT.description;
+            const subtitle = pageLanguage === 'es' ? FEATURED_PROJECT.subtitleEs : FEATURED_PROJECT.subtitle;
+
+            container.innerHTML = `
+                <article class="glass-panel group overflow-hidden">
+                    <div class="featured-project-layout">
+                        <div class="featured-project-image overflow-hidden relative">
+                            <img class="w-full h-full object-cover" src="${FEATURED_PROJECT.image}" alt="OncoLens" loading="lazy" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+                        </div>
+                        <div class="p-6 sm:p-8">
+                            <h3 class="font-h3 text-[28px] sm:text-[32px] text-gradient-primary leading-tight">${FEATURED_PROJECT.title}</h3>
+                            <p class="text-secondary mt-1 mb-4">${subtitle}</p>
+                            <p class="text-on-surface-variant text-sm mb-6">${description}</p>
+                            <div class="flex flex-wrap gap-2 mb-6">${renderTechnologyPills(FEATURED_PROJECT.technologies)}</div>
+                            <div class="featured-kpi-grid mb-6">
+                                ${FEATURED_PROJECT.kpis.map(kpi => `
+                                    <div class="featured-kpi-card">
+                                        <span class="featured-kpi-value">${kpi.value}</span>
+                                        <span class="featured-kpi-label">${pageLanguage === 'es' ? kpi.labelEs : kpi.label}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                ${createCardButton(copy.actions.liveDemo, FEATURED_PROJECT.links.liveDemo, 'text-primary-fixed')}
+                                ${createCardButton(copy.actions.website, FEATURED_PROJECT.links.website, 'text-primary-fixed')}
+                                ${createCardButton(copy.actions.repo, FEATURED_PROJECT.links.github, 'text-primary-fixed')}
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        function renderProjectCard(project) {
+            const copy = UI_TRANSLATIONS[pageLanguage];
+            const title = pageLanguage === 'es' ? project.titleEs : project.title;
+            const description = pageLanguage === 'es' ? project.descriptionEs : project.description;
+            const accentClass = project.accent === 'secondary' ? 'text-secondary' : 'text-primary-fixed';
+
+            return `
+                <div class="glass-panel group overflow-hidden">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="${project.image}" alt="${title}" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            ${renderTechnologyPills(project.technologies, 'project-card', project.accent)}
+                        </div>
+                        <h4 class="font-h3 text-xl mb-3">${title}</h4>
+                        <p class="text-on-surface-variant text-sm mb-6">${description}</p>
+                        <div class="flex flex-wrap gap-4">
+                            ${createCardButton(copy.actions.github, project.links.github, accentClass)}
+                            ${createCardButton(copy.actions.caseStudy, project.links.caseStudy, accentClass)}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getFilteredProjects(category) {
+            if (category === 'All') return PROJECTS;
+            return PROJECTS.filter(project => project.categories.includes(category));
+        }
+
+        function renderProjects() {
+            const grid = document.getElementById('projects-grid');
+            if (!grid) return;
+            const projects = getFilteredProjects(activeCategory);
+            grid.innerHTML = projects.map(renderProjectCard).join('');
+        }
+
+        function updateFilterButtons() {
+            document.querySelectorAll('#project-filters button').forEach(button => {
+                const isActive = button.dataset.filter === activeCategory;
+                button.classList.toggle('bg-primary-fixed', isActive);
+                button.classList.toggle('text-on-primary-fixed', isActive);
+                button.classList.toggle('font-bold', isActive);
+                button.classList.toggle('border', !isActive);
+                button.classList.toggle('border-outline-variant', !isActive);
+                button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+        }
+
+        function setupFilters() {
+            document.querySelectorAll('#project-filters button').forEach(button => {
+                button.addEventListener('click', () => {
+                    activeCategory = button.dataset.filter;
+                    updateFilterButtons();
+                    renderProjects();
+                });
+            });
+        }
+
+        function applyLanguage() {
+            const copy = UI_TRANSLATIONS[pageLanguage];
+
+            document.documentElement.lang = pageLanguage;
+            document.title = copy.title;
+
+            document.querySelectorAll('nav .hidden.md\\:flex a').forEach((link, index) => {
+                if (copy.nav[index]) link.textContent = copy.nav[index];
+            });
+
+            const cvButton = document.querySelector('nav .hidden.sm\\:inline');
+            if (cvButton) cvButton.textContent = copy.cvButton;
+
+            document.querySelectorAll('.lang-switch-link').forEach(link => {
+                const isActive = link.dataset.langLink === pageLanguage;
+                link.classList.toggle('active', isActive);
+            });
+
+            const heroRole = document.querySelector('#home h2');
+            if (heroRole) heroRole.textContent = copy.heroRole;
+            const heroIntro = document.querySelector('#home p.font-body-lg');
+            if (heroIntro) heroIntro.textContent = copy.heroIntro;
+            const heroFeaturedLabel = document.getElementById('hero-featured-label');
+            if (heroFeaturedLabel) heroFeaturedLabel.textContent = copy.heroFeaturedLabel;
+            const heroFeaturedSubtitle = document.getElementById('hero-featured-subtitle');
+            if (heroFeaturedSubtitle) {
+                heroFeaturedSubtitle.textContent = pageLanguage === 'es' ? FEATURED_PROJECT.subtitleEs : FEATURED_PROJECT.subtitle;
+            }
+            const heroFeaturedKpis = document.getElementById('hero-featured-kpis');
+            if (heroFeaturedKpis) {
+                heroFeaturedKpis.textContent = FEATURED_PROJECT.kpis
+                    .slice(0, 3)
+                    .map(kpi => `${kpi.value} ${pageLanguage === 'es' ? kpi.labelEs : kpi.label}`)
+                    .join(' • ');
+            }
+            const heroFeaturedLinkText = document.getElementById('hero-featured-link-text');
+            if (heroFeaturedLinkText) heroFeaturedLinkText.textContent = copy.heroFeaturedCta;
+            const heroButtons = document.querySelectorAll('#home .pt-4 a');
+            if (heroButtons[0]) heroButtons[0].textContent = copy.heroButtons[0];
+            if (heroButtons[1]) heroButtons[1].textContent = copy.heroButtons[1];
+
+            const stackTitle = document.querySelector('[data-lang-key="hero_stack_title"]');
+            if (stackTitle) stackTitle.textContent = copy.stackTitle;
+
+            const aboutHeader = document.querySelectorAll('#about .flex-1 > span, #about .flex-1 > h2');
+            if (aboutHeader[0]) aboutHeader[0].textContent = copy.aboutLabel;
+            if (aboutHeader[1]) aboutHeader[1].textContent = copy.aboutTitle;
+            document.querySelectorAll('#about .space-y-6 p').forEach((p, i) => {
+                if (copy.aboutParagraphs[i]) p.textContent = copy.aboutParagraphs[i];
+            });
+
+            const expTitle = document.querySelector('#experience .lg\\:grid-cols-2 > div:first-child h2');
+            if (expTitle) expTitle.textContent = copy.experienceTitle;
+            const expNodes = document.querySelectorAll('#experience .group span.font-code, #experience .group h3, #experience .group p.text-on-surface-variant');
+            if (expNodes[0]) expNodes[0].textContent = copy.experience[0];
+            if (expNodes[1]) expNodes[1].textContent = copy.experience[1];
+            if (expNodes[2]) expNodes[2].textContent = copy.experience[2];
+            if (expNodes[3]) expNodes[3].textContent = '2022 - 2023';
+            if (expNodes[4]) expNodes[4].textContent = copy.experience[3];
+            if (expNodes[5]) expNodes[5].textContent = copy.experience[4];
+
+            const eduTitle = document.querySelector('#experience .lg\\:grid-cols-2 > div:last-child h2');
+            if (eduTitle) eduTitle.textContent = copy.educationTitle;
+            const eduBadges = document.querySelectorAll('#experience .text-xs.bg-primary-fixed\\/10, #experience .text-xs.bg-tertiary-fixed-dim\\/10');
+            if (eduBadges[0]) eduBadges[0].textContent = copy.education[0];
+            if (eduBadges[1]) eduBadges[1].textContent = copy.education[3];
+            const eduNodes = document.querySelectorAll('#experience .border-l-4 h4, #experience .border-l-4 p');
+            if (eduNodes[0]) eduNodes[0].textContent = copy.education[1];
+            if (eduNodes[1]) eduNodes[1].textContent = copy.education[2];
+            if (eduNodes[4]) eduNodes[4].textContent = copy.education[4];
+            if (eduNodes[5]) eduNodes[5].textContent = copy.education[5];
+
+            const projectHeader = document.querySelectorAll('#projects .text-label-caps, #projects h2');
+            if (projectHeader[0]) projectHeader[0].textContent = copy.projectsLabel;
+            if (projectHeader[1]) projectHeader[1].textContent = copy.projectsTitle;
+            const featuredLabel = document.getElementById('featured-project-label');
+            if (featuredLabel) featuredLabel.textContent = copy.featuredLabel;
+
+            document.querySelectorAll('#project-filters button').forEach(btn => {
+                const label = copy.filters[btn.dataset.filter];
+                if (label) btn.textContent = label;
+            });
+
+            const contactTitle = document.querySelector('#contact h2');
+            if (contactTitle) contactTitle.textContent = copy.contactTitle;
+            const contactNodes = document.querySelectorAll('#contact h5, #contact p.text-xs');
+            if (contactNodes[0]) contactNodes[0].textContent = copy.contactCards[0];
+            if (contactNodes[1]) contactNodes[1].textContent = copy.contactCards[1];
+            if (contactNodes[2]) contactNodes[2].textContent = copy.contactCards[2];
+            if (contactNodes[3]) contactNodes[3].textContent = copy.contactCards[3];
+            if (contactNodes[4]) contactNodes[4].textContent = copy.contactCards[4];
+            if (contactNodes[5]) contactNodes[5].textContent = copy.contactCards[5];
+            if (contactNodes[6]) contactNodes[6].textContent = copy.contactCards[6];
+            if (contactNodes[7]) contactNodes[7].textContent = copy.contactCards[7];
+
+            const footerLinks = document.querySelectorAll('footer a');
+            if (footerLinks[0]) footerLinks[0].textContent = copy.footer[0];
+            if (footerLinks[1]) footerLinks[1].textContent = copy.footer[1];
+            if (footerLinks[2]) footerLinks[2].textContent = copy.footer[2];
+            if (footerLinks[3]) footerLinks[3].textContent = copy.footer[3];
+            if (footerLinks[4]) {
+                footerLinks[4].childNodes[0].textContent = `${copy.footer[4]} `;
+            }
+        }
+
+        applyLanguage();
+        renderFeaturedProject();
+        renderProjects();
+        setupFilters();
+        updateFilterButtons();
+
         // Smooth scroll implementation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
                     behavior: 'smooth'
-                });
+                    });
+                }
             });
         });
 
