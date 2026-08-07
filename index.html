@@ -94,8 +94,16 @@
 
                     </p>
 <div class="flex flex-col sm:flex-row gap-4 pt-4">
-<button class="bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-full font-bold hover:shadow-[0_0_20px_#00fbfc] transition-all w-full sm:w-auto">View Projects</button>
-<button class="border border-secondary text-secondary px-8 py-4 rounded-full font-bold hover:bg-secondary/10 transition-all w-full sm:w-auto">Contact Me</button>
+<a
+    href="#projects"
+    class="bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-full font-bold hover:shadow-[0_0_20px_#00fbfc] transition-all w-full sm:w-auto">
+    View Projects
+</a>
+<a
+    href="#contact"
+    class="border border-secondary text-secondary px-8 py-4 rounded-full font-bold hover:bg-secondary/10 transition-all w-full sm:w-auto inline-block text-center">
+    Contact Me
+</a>
 </div>
 </div>
 <!-- Right Portrait Visual -->
@@ -391,20 +399,68 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full rounded-t-[24px] bg-surface-container-lowest border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-10 md:py-stack-md gap-4 md:gap-gutter w-full">
-<div class="flex flex-col items-center md:items-start">
-<span class="font-section-title-mobile text-section-title-mobile text-primary-fixed">Noelia Sánchez</span>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-center md:text-left opacity-70">© 2024 Noelia Sánchez.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-4 md:gap-8 font-body-md text-body-md text-on-surface-variant">
-<a class="hover:text-secondary transition-colors" href="#">Contact</a>
-<a class="hover:text-secondary transition-colors" href="#">LinkedIn</a>
-<a class="hover:text-secondary transition-colors" href="#">GitHub</a>
-<a class="text-primary-fixed hover:text-secondary transition-colors flex items-center gap-1" href="#home">
-                Back to Top
-                <span class="material-symbols-outlined text-sm">arrow_upward</span>
-</a>
-</div>
+<footer class="w-full rounded-t-[24px] bg-surface-container-lowest border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-10 md:py-stack-md gap-4 md:gap-gutter">
+
+    <!-- Left -->
+    <div class="flex flex-col items-center md:items-start">
+        <span class="font-section-title-mobile text-section-title-mobile text-primary-fixed">
+            Noelia Sánchez
+        </span>
+
+        <p class="font-body-md text-body-md text-on-surface-variant mt-2 text-center md:text-left opacity-70">
+            © 2026 Noelia Sánchez. All rights reserved.
+        </p>
+    </div>
+
+    <!-- Right -->
+    <div class="flex flex-wrap justify-center gap-4 md:gap-8 font-body-md text-body-md text-on-surface-variant">
+
+        <a
+            href="#contact"
+            class="hover:text-secondary transition-colors">
+            Contact
+        </a>
+
+        <a
+            href="mailto:nsfacila@hotmail.com"
+            class="hover:text-secondary transition-colors">
+            Email
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/noelia-s%C3%A1nchez-f%C3%A1cila/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-secondary transition-colors">
+            LinkedIn
+        </a>
+
+        <a
+            href="https://github.com/nsfacila"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-secondary transition-colors">
+            GitHub
+        </a>
+
+        <a
+            href="./assets/CV_Noelia_Sanchez.pdf"
+            download
+            class="hover:text-secondary transition-colors">
+            Download CV
+        </a>
+
+        <a
+            href="#home"
+            class="text-primary-fixed hover:text-secondary transition-colors flex items-center gap-1">
+            Back to Top
+            <span class="material-symbols-outlined text-sm">
+                arrow_upward
+            </span>
+        </a>
+
+    </div>
+
 </footer>
 <script>
         // Smooth scroll implementation
