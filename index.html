@@ -129,6 +129,24 @@
                 flex-wrap: nowrap;
             }
         }
+
+        @media (max-width: 430px) {
+            html,
+            body {
+                overflow-x: hidden;
+            }
+
+            .text-section-title,
+            .font-section-title {
+                font-size: clamp(2rem, 10vw, 2.65rem) !important;
+                line-height: 1.1 !important;
+                letter-spacing: -0.02em !important;
+            }
+
+            #contact h2 {
+                overflow-wrap: anywhere;
+            }
+        }
     </style>
 </head>
 <body class="font-body-md">
