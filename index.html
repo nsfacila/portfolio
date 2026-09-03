@@ -178,6 +178,7 @@
 <a
     href="./assets/CV_Noelia_Sanchez_Facila.pdf"
     target="_blank"
+    data-cv-download="true"
     class="bg-primary-fixed text-on-primary-fixed px-4 sm:px-6 py-2 rounded-full font-bold flex items-center gap-2 hover:shadow-[0_0_15px_#00fbfc] hover:scale-105 transition-all duration-300"
 >
     <span class="material-symbols-outlined">download</span>
@@ -435,6 +436,7 @@
 <a
     href="./assets/CV_Noelia_Sanchez_Facila.pdf"
     target="_blank"
+    data-cv-download="true"
     class="glass-panel p-8 group hover:scale-105 cursor-pointer border-primary-fixed/30 neon-glow-cyan bg-primary-fixed/5"
 >
     <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mx-auto mb-4">
@@ -492,6 +494,7 @@
         <a
             href="./assets/CV_Noelia_Sanchez_Facila.pdf"
             target="_blank"
+            data-cv-download="true"
             class="hover:text-secondary transition-colors">
             Download CV
         </a>
@@ -893,6 +896,32 @@
                     behavior: 'smooth'
                     });
                 }
+            });
+        });
+
+        function triggerPdfDownload(fileUrl, fileName) {
+            const tempLink = document.createElement('a');
+            tempLink.href = fileUrl;
+            tempLink.download = fileName;
+            tempLink.rel = 'noopener';
+            tempLink.style.display = 'none';
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            document.body.removeChild(tempLink);
+        }
+
+        document.querySelectorAll('a[data-cv-download="true"]').forEach(anchor => {
+            anchor.addEventListener('click', event => {
+                event.preventDefault();
+
+                const spanishCvUrl = anchor.getAttribute('href');
+                const englishCvUrl = './assets/CV_Noelia_Sanchez_Facila_EN.pdf';
+
+                if (spanishCvUrl) {
+                    triggerPdfDownload(spanishCvUrl, 'CV_Noelia_Sanchez_Facila.pdf');
+                }
+
+                triggerPdfDownload(englishCvUrl, 'CV_Noelia_Sanchez_Facila_EN.pdf');
             });
         });
 
